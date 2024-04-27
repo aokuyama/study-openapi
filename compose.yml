@@ -1,0 +1,10 @@
+services:
+  ui:
+    build:
+      context: ./docker/ui
+    ports:
+      - ${UI_PORT:-8080}:8080
+    volumes:
+      - ./openapi:/openapi
+    environment:
+      API_URL: openapi/openapi.yml
