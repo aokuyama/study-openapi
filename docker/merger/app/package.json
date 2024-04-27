@@ -1,0 +1,13 @@
+{
+  "name": "merger",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "merge": "swagger-merger -i src/openapi.yml -o /openapi/openapi.yml",
+    "watch": "watch \"npm run merge\" ./src"
+  },
+  "devDependencies": {
+    "swagger-merger": "^1.5.4",
+    "watch": "^0.13.0"
+  }
+}
