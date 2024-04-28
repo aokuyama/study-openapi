@@ -4,10 +4,19 @@
   "description": "",
   "scripts": {
     "merge": "swagger-merger -i src/openapi.yml -o /openapi/openapi.yml",
-    "watch": "watch \"npm run merge\" ./src"
+    "watch": "npm-watch"
+  },
+  "watch": {
+    "merge": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "yml"
+    }
   },
   "devDependencies": {
-    "swagger-merger": "^1.5.4",
-    "watch": "^0.13.0"
+    "npm-watch": "^0.12.0",
+    "swagger-merger": "1.5.4",
+    "watch": "0.13.0"
   }
 }
