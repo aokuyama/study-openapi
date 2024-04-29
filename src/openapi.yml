@@ -11,5 +11,11 @@ servers:
   - url: http://staging-api.example.com
     description: Optional server description, e.g. Internal staging server for testing
 paths:
-  /users:
-    $ref: ./paths/users.yml
+  /v1/users/signup:
+    $ref: ./paths/v1/users/signup.yml
+  /v1/users/auth:
+    $ref: ./paths/v1/users/auth.yml
+  /v1/users/me:
+    $ref: ./paths/v1/users/me.yml
+  /v1/users/refresh:
+    $ref: ./paths/v1/users/refresh.yml
