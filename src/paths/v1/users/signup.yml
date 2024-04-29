@@ -7,8 +7,7 @@ post:
           type: object
           properties:
             password:
-              type: string
-              example: X5j13$#eCM1cG@Kdc
+              $ref: '#/components/schemas/password'
   responses:
     '200':
       content:
@@ -17,8 +16,6 @@ post:
             type: object
             properties:
               id:
-                type: string
-                example: 550e8400-e29b-41d4-a716-446655440000
+                $ref: '#/components/schemas/uuid'
               token:
-                type: string
-                example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+                $ref: '#/components/schemas/token'
