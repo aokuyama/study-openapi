@@ -1,4 +1,14 @@
 post:
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            password:
+              type: string
+              example: X5j13$#eCM1cG@Kdc
   responses:
     '200':
       content:

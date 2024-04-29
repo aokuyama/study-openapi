@@ -5,11 +5,13 @@ info:
     Optional multiline or single-line description in
     [CommonMark](http://commonmark.org/help/) or HTML.
   version: 0.1.9
+
 servers:
   - url: http://api.example.com/v1
     description: Optional server description, e.g. Main (production) server
   - url: http://staging-api.example.com
     description: Optional server description, e.g. Internal staging server for testing
+
 paths:
   /v1/users/signup:
     $ref: ./paths/v1/users/signup.yml
@@ -19,3 +21,14 @@ paths:
     $ref: ./paths/v1/users/me.yml
   /v1/users/refresh:
     $ref: ./paths/v1/users/refresh.yml
+
+components:  
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT 
+
+  responses:
+    UnauthorizedError:
+      description: Access token is missing or invalid
