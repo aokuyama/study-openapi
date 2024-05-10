@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "merge": "swagger-merger -i src/openapi.yml -o /openapi/openapi.yml",
+    "merge:v1": "swagger-merger -i src/v1.yml -o /openapi/v1.yml",
+    "merge:v2": "swagger-merger -i src/v2.yml -o /openapi/v2.yml",
+    "merge": "run-p merge:v1 merge:v2",
     "watch": "npm-watch"
   },
   "watch": {
@@ -15,7 +17,8 @@
     }
   },
   "devDependencies": {
-    "npm-watch": "^0.12.0",
+    "npm-run-all2": "6.1.2",
+    "npm-watch": "0.12.0",
     "swagger-merger": "1.5.4",
     "watch": "0.13.0"
   }

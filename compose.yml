@@ -7,7 +7,7 @@ services:
     volumes:
       - ./gen:/openapi
     environment:
-      API_URL: openapi/openapi.yml
+      QUERY_CONFIG_ENABLED: true
 
   merger:
     build:
