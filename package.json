@@ -24,5 +24,8 @@
     "swagger-merger": "1.5.4",
     "watch": "0.13.0",
     "@redocly/cli": "1.12.2"
+  },
+  "engines": {
+    "node": "20.12.2"
   }
 }
