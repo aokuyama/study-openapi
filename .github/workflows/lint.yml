@@ -1,0 +1,26 @@
+name: Lint v1
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened]
+
+jobs:
+  lint:
+    name: Lint v1 API
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install and cache nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: package.json
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+      - name: Install packages
+        run: npm ci
+      - name: Merge
+        run: npm run merge:v1
+      - name: Lint
+        run: npm run lint:v1
