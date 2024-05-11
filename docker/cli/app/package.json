@@ -4,9 +4,25 @@
   "description": "",
   "scripts": {
     "lint:v1": "redocly lint /openapi/v1.yml",
-    "lint:v2": "redocly lint /openapi/v2.yml"
+    "lint:v2": "redocly lint /openapi/v2.yml",
+    "merge:v1": "swagger-merger -i src/v1.yml -o /openapi/v1.yml",
+    "merge:v2": "swagger-merger -i src/v2.yml -o /openapi/v2.yml",
+    "merge": "run-p merge:v1 merge:v2",
+    "watch": "npm-watch"
+  },
+  "watch": {
+    "merge": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "yml"
+    }
   },
   "devDependencies": {
+    "npm-run-all2": "6.1.2",
+    "npm-watch": "0.12.0",
+    "swagger-merger": "1.5.4",
+    "watch": "0.13.0",
     "@redocly/cli": "1.12.2"
   }
 }

@@ -5,6 +5,7 @@ services:
     volumes:
       - ./gen:/openapi
       - ./docker/cli/app:/app
+
   ui:
     build:
       context: ./docker/ui
@@ -17,12 +18,16 @@ services:
 
   merger:
     build:
-      context: ./docker/merger
+      context: ./docker/cli
     volumes:
+      - ./docker/cli/app:/app
       - ./src:/app/src
       - ./gen:/openapi
     command: >
+      ash -c '
+      npm i &&
       npm run watch
+      '
   
   doc:
     image: redocly/redoc:v2.1.4
