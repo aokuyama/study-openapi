@@ -1,0 +1,12 @@
+{
+  "name": "cli",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "lint:v1": "redocly lint /openapi/v1.yml",
+    "lint:v2": "redocly lint /openapi/v2.yml"
+  },
+  "devDependencies": {
+    "@redocly/cli": "1.12.2"
+  }
+}

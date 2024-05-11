@@ -1,4 +1,10 @@
 services:
+  cli:
+    build:
+      context: ./docker/cli
+    volumes:
+      - ./gen:/openapi
+      - ./docker/cli/app:/app
   ui:
     build:
       context: ./docker/ui
