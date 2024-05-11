@@ -1,0 +1,7 @@
+apis:
+  api@v1:
+    root: gen/v1.yml
+extends:
+  - recommended
+rules:
+  no-unused-components: warn
