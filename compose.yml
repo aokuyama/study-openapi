@@ -17,3 +17,12 @@ services:
       - ./gen:/openapi
     command: >
       npm run watch
+  
+  doc:
+    image: redocly/redoc:v2.1.4
+    volumes:
+      - ./gen:/usr/share/nginx/html/openapi
+    ports:
+      - ${DOC_PORT:-8081}:80
+    environment:
+      SPEC_URL: openapi/v1.yml
