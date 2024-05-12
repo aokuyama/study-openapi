@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "lint:fmt": "prettier --check src",
+    "fmt": "prettier --write src",
     "lint:v1": "redocly lint api@v1 --config=redocly/v1.yml",
     "lint:v2": "redocly lint api@v2 --config=redocly/v2.yml",
     "merge:v1": "swagger-merger -i src/v1.yml -o gen/v1.yml",
@@ -19,11 +21,12 @@
     }
   },
   "devDependencies": {
+    "@redocly/cli": "1.12.2",
     "npm-run-all2": "6.1.2",
     "npm-watch": "0.12.0",
+    "prettier": "3.2.5",
     "swagger-merger": "1.5.4",
-    "watch": "0.13.0",
-    "@redocly/cli": "1.12.2"
+    "watch": "0.13.0"
   },
   "engines": {
     "node": "18.20.2"
