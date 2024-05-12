@@ -16,7 +16,7 @@ paths:
   /v2/users/signup:
     $ref: ./paths/v1/users/signup.yml
 
-components:  
+components:
   securitySchemes:
     bearerAuth:
       $ref: ./components/securitySchemes/bearerAuth.yml
@@ -27,7 +27,7 @@ components:
     password:
       $ref: ./components/schemas/password.yml
     token:
-      $ref: ./components/schemas/token.yml    
+      $ref: ./components/schemas/token.yml
 
   responses:
     UnauthorizedError:
