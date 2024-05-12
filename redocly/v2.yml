@@ -1,0 +1,7 @@
+apis:
+  api@v2:
+    root: gen/v2.yml
+extends:
+  - recommended
+rules:
+  no-unused-components: error

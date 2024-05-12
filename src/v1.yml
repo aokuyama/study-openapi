@@ -22,7 +22,7 @@ paths:
   /v1/users/refresh:
     $ref: ./paths/v1/users/refresh.yml
 
-components:  
+components:
   securitySchemes:
     bearerAuth:
       $ref: ./components/securitySchemes/bearerAuth.yml
@@ -33,7 +33,7 @@ components:
     password:
       $ref: ./components/schemas/password.yml
     token:
-      $ref: ./components/schemas/token.yml    
+      $ref: ./components/schemas/token.yml
 
   responses:
     UnauthorizedError:

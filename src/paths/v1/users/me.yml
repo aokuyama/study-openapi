@@ -11,6 +11,6 @@ get:
             type: object
             properties:
               id:
-                $ref: '#/components/schemas/uuid'
+                $ref: "#/components/schemas/uuid"
     401:
-      $ref: '#/components/responses/UnauthorizedError'
+      $ref: "#/components/responses/UnauthorizedError"

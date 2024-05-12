@@ -9,9 +9,9 @@ post:
           type: object
           properties:
             id:
-              $ref: '#/components/schemas/uuid'
+              $ref: "#/components/schemas/uuid"
             password:
-              $ref: '#/components/schemas/password'
+              $ref: "#/components/schemas/password"
   responses:
     200:
       description: Success
@@ -21,8 +21,8 @@ post:
             type: object
             properties:
               id:
-                $ref: '#/components/schemas/uuid'
+                $ref: "#/components/schemas/uuid"
               token:
-                $ref: '#/components/schemas/token'
+                $ref: "#/components/schemas/token"
     401:
-      $ref: '#/components/responses/UnauthorizedError'
+      $ref: "#/components/responses/UnauthorizedError"
