@@ -3,6 +3,11 @@ name: Publish Docs
 on:
   workflow_dispatch:
 
+permissions:
+  actions: write
+  checks: write
+  contents: write
+
 jobs:
   publish:
     name: Publish Docs
