@@ -9,8 +9,10 @@
     "lint:v2": "redocly lint api@v2 --config=redocly/v2.yml",
     "merge:v1": "swagger-merger -i src/v1.yml -o gen/v1.yml",
     "merge:v2": "swagger-merger -i src/v2.yml -o gen/v2.yml",
-    "build-docs:v1": "redocly build-docs api@v1 --config=redocly/v1.yml --output=docs/v1.html",
-    "build-docs:v2": "redocly build-docs api@v2 --config=redocly/v2.yml --output=docs/v2.html",
+    "build-docs:v1": "redocly build-docs api@v1 --config=redocly/v1.yml --output=gen/v1.html",
+    "build-docs:v2": "redocly build-docs api@v2 --config=redocly/v2.yml --output=gen/v2.html",
+    "copy-docs:v1": "cp gen/v1.html docs/",
+    "copy-docs:v2": "cp gen/v2.html docs/",
     "merge": "run-p merge:v1 merge:v2",
     "watch": "npm-watch"
   },
