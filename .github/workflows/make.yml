@@ -1,0 +1,39 @@
+on:
+  workflow_call:
+
+permissions:
+  contents: write
+
+jobs:
+  make:
+    name: Make OpenAPI
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+        
+    - name: Install and cache nodejs
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: package.json
+        cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
+  
+    - name: Install packages
+      run: npm ci
+
+    - name: Lint file format
+      run: npm run lint:fmt
+
+    - name: Merge
+      run: npm run merge:v1
+
+    - name: Build docs
+      run: npm run build-docs:v1
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: openapi
+        path: gen
+        retention-days: 1

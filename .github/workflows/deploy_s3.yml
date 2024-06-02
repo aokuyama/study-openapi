@@ -15,7 +15,12 @@ permissions:
 
 jobs:
   build:
+    name: make
+    uses: ./.github/workflows/make.yml
+    
+  deploy:
     name: Deploy Docs
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
     - name: configure aws credentials
@@ -23,31 +28,19 @@ jobs:
       with:
         role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
         aws-region: ${{ vars.AWS_REGION }}
-
+    
     - name: Checkout
       uses: actions/checkout@v4
-        
-    - name: Install and cache nodejs
-      uses: actions/setup-node@v3
+    
+    - name: Download Artifact
+      uses: actions/download-artifact@v4
       with:
-        node-version-file: package.json
-        cache: 'npm'
-        cache-dependency-path: '**/package-lock.json'
-  
-    - name: Install packages
-      run: npm ci
-
-    - name: Lint file format
-      run: npm run lint:fmt
-
-    - name: Merge
-      run: npm run merge:v1
-
-    - name: Build docs
-      run: npm run build-docs:v1
+        name: openapi
+        path: gen
 
     - name: Copy docs
-      run: cp gen/v1.html docs/
+      run: |
+       cp gen/v1.html docs/
 
     - name: Deploy to S3
       run: |
