@@ -1,4 +1,4 @@
-name: Publish Docs
+name: Deploy Docs to Pages
 
 on:
   workflow_dispatch:
@@ -14,30 +14,22 @@ permissions:
 
 jobs:
   build:
-    name: Publish Docs
+    name: make
+    uses: ./.github/workflows/make.yml
+
+  upload:
+    name: Publish Pages
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-        
-    - name: Install and cache nodejs
-      uses: actions/setup-node@v3
+    
+    - name: Download Artifact
+      uses: actions/download-artifact@v4
       with:
-        node-version-file: package.json
-        cache: 'npm'
-        cache-dependency-path: '**/package-lock.json'
-  
-    - name: Install packages
-      run: npm ci
-
-    - name: Lint file format
-      run: npm run lint:fmt
-
-    - name: Merge
-      run: npm run merge:v1
-
-    - name: Build docs
-      run: npm run build-docs:v1
+        name: openapi
+        path: gen
 
     - name: Copy docs
       run: cp gen/v1.html docs/
@@ -48,7 +40,7 @@ jobs:
         path: docs
 
   deploy:
-    needs: build
+    needs: upload
     permissions:
       pages: write
       id-token: write
