@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "build": "run-s merge:* build-docs:* copy-docs",
     "lint:fmt": "prettier --check src",
     "fmt": "prettier --write src",
     "lint:v1": "redocly lint api@v1 --config=redocly/v1.yml",
@@ -12,6 +13,7 @@
     "build-docs:v1": "redocly build-docs api@v1 --config=redocly/v1.yml --output=gen/v1.html",
     "build-docs:v2": "redocly build-docs api@v2 --config=redocly/v2.yml --output=gen/v2.html",
     "merge": "run-p merge:v1 merge:v2",
+    "copy-docs": "cp gen/*.html docs/",
     "watch": "npm-watch"
   },
   "watch": {
