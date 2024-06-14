@@ -21,6 +21,8 @@ paths:
     $ref: ./paths/v1/users/me.yml
   /v1/users/refresh:
     $ref: ./paths/v1/users/refresh.yml
+  /v1/e/{path}:
+    $ref: ./paths/v1/e/[path].yml
 
 components:
   securitySchemes:
@@ -34,6 +36,10 @@ components:
       $ref: ./components/schemas/password.yml
     token:
       $ref: ./components/schemas/token.yml
+    event.path:
+      $ref: ./components/schemas/event/path.yml
+    event.name:
+      $ref: ./components/schemas/event/name.yml
 
   responses:
     UnauthorizedError:

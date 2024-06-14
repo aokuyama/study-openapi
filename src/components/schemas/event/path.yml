@@ -1,0 +1,4 @@
+type: string
+minLength: 16
+maxLength: 16
+example: B1vNChJT1s34TuRb
