@@ -4,6 +4,7 @@ services:
       context: ./docker/cli
     volumes:
       - .:/app
+      - node_modules:/app/node_modules
 
   ui:
     build:
@@ -20,6 +21,7 @@ services:
       context: ./docker/cli
     volumes:
       - .:/app
+      - node_modules:/app/node_modules
     command: >
       ash -c '
       npm i &&
@@ -34,3 +36,6 @@ services:
       - ${DOC_PORT:-8081}:80
     environment:
       SPEC_URL: openapi/v1.yml
+
+volumes:
+  node_modules:
