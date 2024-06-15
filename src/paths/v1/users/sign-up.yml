@@ -1,5 +1,5 @@
 post:
-  operationId: v1UsersSignup
+  operationId: v1UsersSignUp
   summary: Signup user.
   security: []
   requestBody:
@@ -23,3 +23,5 @@ post:
                 $ref: "#/components/schemas/uuid"
               token:
                 $ref: "#/components/schemas/token"
+    400:
+      $ref: "#/components/responses/UnauthorizedError"

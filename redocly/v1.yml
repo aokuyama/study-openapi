@@ -7,9 +7,18 @@ rules:
   no-unused-components: warn
   no-server-example.com: off
   info-license: off
+
   rule/schema-properties-camel-case:
     subject:
       type: SchemaProperties
     assertions:
       casing: camelCase
+    severity: error
+
+  rule/require-kebab-case-paths:
+    subject:
+      type: Paths
+    assertions:
+      pattern: /^[a-z0-9\-\/\{\}]+$/
+    message: should use kebab-case
     severity: error
