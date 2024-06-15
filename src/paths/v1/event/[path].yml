@@ -1,0 +1,29 @@
+get:
+  operationId: v1Event[path]
+  summary: Get event data.
+  security: []
+  parameters:
+    - name: path
+      in: path
+      description: Event URL Path
+      required: true
+      schema:
+        $ref: "#/components/schemas/event.path"
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                $ref: "#/components/schemas/uuid"
+              name:
+                $ref: "#/components/schemas/event.name"
+              startDate:
+                type: string
+                format: date
+
+    404:
+      $ref: "#/components/responses/NotFoundError"

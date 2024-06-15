@@ -5,3 +5,11 @@ extends:
   - recommended
 rules:
   no-unused-components: warn
+  no-server-example.com: off
+  info-license: off
+  rule/schema-properties-camel-case:
+    subject:
+      type: SchemaProperties
+    assertions:
+      casing: camelCase
+    severity: error
