@@ -1,5 +1,5 @@
 get:
-  operationId: v1EPath
+  operationId: v1E[path]
   summary: Get event data.
   security: []
   parameters:
@@ -21,6 +21,9 @@ get:
                 $ref: "#/components/schemas/uuid"
               name:
                 $ref: "#/components/schemas/event.name"
-                
+              startDate:
+                type: string
+                format: date
+
     404:
       $ref: "#/components/responses/NotFoundError"
