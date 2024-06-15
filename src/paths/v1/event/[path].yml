@@ -1,5 +1,5 @@
 get:
-  operationId: v1E[path]
+  operationId: v1Event[path]
   summary: Get event data.
   security: []
   parameters:

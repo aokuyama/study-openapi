@@ -21,8 +21,8 @@ paths:
     $ref: ./paths/v1/users/me.yml
   /v1/users/refresh:
     $ref: ./paths/v1/users/refresh.yml
-  /v1/e/{path}:
-    $ref: ./paths/v1/e/[path].yml
+  /v1/event/{path}:
+    $ref: ./paths/v1/event/[path].yml
 
 components:
   securitySchemes:
