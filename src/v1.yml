@@ -44,3 +44,5 @@ components:
   responses:
     UnauthorizedError:
       $ref: ./components/responses/UnauthorizedError.yml
+    NotFoundError:
+      $ref: ./components/responses/NotFoundError.yml
