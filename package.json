@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "build": "run-s merge:* build-docs:* copy-docs",
-    "lint:fmt": "prettier --check src",
-    "fmt": "prettier --write src",
+    "lint:fmt": "prettier --check ./{src,redocly}/**/*.{yml,js}",
+    "fmt": "prettier --write ./{src,redocly}/**/*.{yml,js}",
     "lint:v1": "redocly lint api@v1 --config=redocly/v1.yml",
     "lint:v2": "redocly lint api@v2 --config=redocly/v2.yml",
     "merge:v1": "swagger-merger -i src/v1.yml -o gen/v1.yml",
@@ -25,7 +25,7 @@
     }
   },
   "devDependencies": {
-    "@redocly/cli": "1.15.0",
+    "@redocly/cli": "1.16.0",
     "npm-run-all2": "6.1.2",
     "npm-watch": "0.12.0",
     "prettier": "3.2.5",

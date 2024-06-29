@@ -13,8 +13,8 @@ servers:
     description: Optional server description, e.g. Internal staging server for testing
 
 paths:
-  /v1/users/signup:
-    $ref: ./paths/v1/users/signup.yml
+  /v1/users/sign-up:
+    $ref: ./paths/v1/users/sign-up.yml
   /v1/users/auth:
     $ref: ./paths/v1/users/auth.yml
   /v1/users/me:

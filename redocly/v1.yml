@@ -3,13 +3,44 @@ apis:
     root: gen/v1.yml
 extends:
   - recommended
+plugins:
+  - ./plugin.js
 rules:
   no-unused-components: warn
   no-server-example.com: off
   info-license: off
+
   rule/schema-properties-camel-case:
     subject:
       type: SchemaProperties
     assertions:
       casing: camelCase
     severity: error
+
+  rule/require-kebab-case-paths:
+    subject:
+      type: Paths
+    assertions:
+      pattern: /^[a-z0-9\-\/\{\}]+$/
+    message: should use kebab-case
+    severity: error
+
+  rule/require-camel-case-query-parameters:
+    subject:
+      type: Parameter
+      property: name
+    where:
+      - subject:
+          type: Parameter
+          property: in
+        assertions:
+          const: query
+    assertions:
+      casing: camelCase
+    severity: error
+
+  rule/fixed-operation-id:
+    subject:
+      type: Paths
+    assertions:
+      local/fixedOperationId: {}
