@@ -43,4 +43,4 @@ rules:
     subject:
       type: Paths
     assertions:
-      local/fixedOperationId:
+      local/fixedOperationId: {}
