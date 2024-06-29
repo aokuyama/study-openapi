@@ -1,5 +1,5 @@
 get:
-  operationId: v1UsersRefresh
+  operationId: get-v1-users-refresh
   summary: Refresh access token.
   security:
     - bearerAuth: []

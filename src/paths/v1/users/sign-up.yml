@@ -1,5 +1,5 @@
 post:
-  operationId: v1UsersSignUp
+  operationId: post-v1-users-sign-up
   summary: Signup user.
   security: []
   requestBody:

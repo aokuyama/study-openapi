@@ -1,5 +1,5 @@
 get:
-  operationId: v1UsersMe
+  operationId: get-v1-users-me
   summary: Get logged users information.
   security:
     - bearerAuth: []

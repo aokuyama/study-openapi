@@ -1,5 +1,5 @@
 post:
-  operationId: v1UsersAuth
+  operationId: post-v1-users-auth
   summary: Authenticate user.
   security: []
   requestBody:
