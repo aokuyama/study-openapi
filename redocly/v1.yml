@@ -3,6 +3,8 @@ apis:
     root: gen/v1.yml
 extends:
   - recommended
+plugins:
+  - ./plugin.js
 rules:
   no-unused-components: warn
   no-server-example.com: off
@@ -36,3 +38,9 @@ rules:
     assertions:
       casing: camelCase
     severity: error
+
+  rule/fixed-operation-id:
+    subject:
+      type: Paths
+    assertions:
+      local/fixedOperationId:
