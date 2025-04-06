@@ -1,6 +1,6 @@
 apis:
   api@v1:
-    root: gen/v1.yml
+    root: ../gen/v1.yml
 extends:
   - recommended
 plugins:

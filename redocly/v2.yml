@@ -1,6 +1,6 @@
 apis:
   api@v2:
-    root: gen/v2.yml
+    root: ../gen/v2.yml
 extends:
   - recommended
 rules:
